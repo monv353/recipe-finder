@@ -1,5 +1,4 @@
 # Recipe Finder App
-#### Video Demo: [https://youtu.be/DPNlgRRQ8Lc)
 #### Description:
 
 The Recipe Finder App is a web application designed to help users find recipes, explore detailed nutritional information, and track their search history. Built using Flask, JavaScript, and SQLite, this project integrates skills I’ve learned from CS50, including Python programming, API usage, database management, and creating responsive web interfaces.
