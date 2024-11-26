@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Recipe Finder</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Search Section -->
+        <div class="search-container">
+            <input
+                id="recipeInput"
+                type="text"
+                class="form-control"
+                placeholder="Search for a recipe..."
+                aria-label="Recipe Search"
+            >
+            <ul id="suggestions" class="list-group mt-2"></ul>
+            <button id="searchBtn" class="btn btn-primary btn-block mt-3">Find Recipe</button>
+        </div>
+
+        <!-- Recipe Result Section -->
+        <div id="recipeResult">
+        </div>
+        <div style="width: 100%; max-width: 1200px; margin: auto;">
+            <canvas id="nutritionChart"></canvas>
+        </div>
+
+        <script>
+            const ctx = document.getElementById('nutritionChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Protein', 'Carbs', 'Fat', 'Fiber'],
+                    datasets: [{
+                        label: 'Nutrition (g)',
+                        data: [30, 50, 20, 10],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                    },
+                }
+            });
+        </script>
+
+        <div class="container mt-4">
+            <h2>Recipe History</h2>
+            <ul id="historyList" class="list-group"></ul>
+        </div>
+
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Recipe Finder App | Made with ❤️ by: Michael Hanjaya</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
